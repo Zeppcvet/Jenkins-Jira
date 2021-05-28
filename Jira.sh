@@ -1,3 +1,4 @@
+#!/bin/bash
 sudo apt-get update
 sudo apt-get install default-jdk
 wget https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-core-8.13.7-x64.bin
