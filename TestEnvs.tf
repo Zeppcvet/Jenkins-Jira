@@ -18,7 +18,7 @@ resource "aws_instance" "Jira"{
 ami = "ami-0767046d1677be5a0"
 instance_type = "t2.micro"
 tags = {name = "Jira"}
-#user_data = file("Jira.sh")
+user_data = file("Jira.sh")
 key_name = "MyJenkinsKey"
 
 }
