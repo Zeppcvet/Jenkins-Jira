@@ -6,24 +6,26 @@ pipeline {
       }
       stages {
 
-          stage ("Start Jira"){
+          stage ("Start Jira") {
               when {
-                  expression{
+                  expression {
                       params.Action = 'Start Jira'
                   }
               }
               steps {
-                  echo "Start Jira"
+                  echo 'Start Jira'
               }
           }
-          stage ("Stop Jira"){
-          when {
-              expression{
-                  params.Action = 'Stop Jira'
+
+
+          stage ("Stop Jira") {
+              when {
+                  expression {
+                      params.Action = 'Stop Jira'
               }
           }
               steps {
-                echo "Stop Jira"
+                  echo 'Stop Jira'
               }
           }
 
