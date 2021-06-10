@@ -1,7 +1,6 @@
 pipeline {
       agent any
       parameters {
-          string(name: 'Action', defaultValue: '', description: 'Choose action to perform')
           choice(name: 'Action', choices: ['Start Jira', 'Stop Jira'],description: '')
 
       }
