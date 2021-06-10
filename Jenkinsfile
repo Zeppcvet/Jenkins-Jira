@@ -10,11 +10,11 @@ pipeline {
           stage ("Start Jira") {
               when {
                   expression {
-                      params.ACTION = 'Start Jira'
+                      params.ACTION == 'Start Jira'
                   }
               }
               steps {
-                  sh 'echo 'Start Jira''
+                      echo 'Starting Jira'
               }
           }
 
@@ -22,11 +22,11 @@ pipeline {
           stage ("Stop Jira") {
               when {
                   expression {
-                      params.ACTION = 'Stop Jira'
+                      params.ACTION == 'Stop Jira'
               }
           }
               steps {
-                sh 'echo 'Stop Jira''
+                echo 'Stopping Jira'
               }
           }
 
