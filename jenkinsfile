@@ -14,7 +14,7 @@ pipeline {
                   }
               }
               steps {
-
+                  echo "Start Jira"
               }
           }
           stage ("Stop Jira"){
@@ -24,7 +24,7 @@ pipeline {
               }
           }
               steps {
-
+                echo "Stop Jira"
               }
           }
 
