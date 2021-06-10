@@ -1,15 +1,16 @@
 pipeline {
       agent any
       parameters {
-          choice(name: 'Action', choices: ['Start Jira', 'Stop Jira'],description: '')
+          choice(name: 'ACTION', choices: ['Start Jira', 'Stop Jira'],description: '')
 
       }
+
       stages {
 
           stage ("Start Jira") {
               when {
                   expression {
-                      params.Action = 'Start Jira'
+                      params.ACTION = 'Start Jira'
                   }
               }
               steps {
@@ -21,7 +22,7 @@ pipeline {
           stage ("Stop Jira") {
               when {
                   expression {
-                      params.Action = 'Stop Jira'
+                      params.ACTION = 'Stop Jira'
               }
           }
               steps {
