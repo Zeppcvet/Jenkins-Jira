@@ -14,7 +14,7 @@ pipeline {
                   }
               }
               steps {
-                  echo 'Start Jira'
+                  sh 'echo 'Start Jira''
               }
           }
 
@@ -26,7 +26,7 @@ pipeline {
               }
           }
               steps {
-                  echo 'Stop Jira'
+                sh 'echo 'Stop Jira''
               }
           }
 
