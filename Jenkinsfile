@@ -20,7 +20,7 @@ pipeline {
       }
       steps {
         container('ubuntu:latest') {
-          sh "ssh -i "MyJenkinsKey.pem" ubuntu@ec2-3-68-183-70.eu-central-1.compute.amazonaws.com"
+#          sh "ssh -i "MyJenkinsKey.pem" ubuntu@ec2-3-68-183-70.eu-central-1.compute.amazonaws.com"
           sh "echo "starttest1" > starttestfile.txt"
         }
       }
@@ -35,7 +35,7 @@ pipeline {
       }
       steps {
         container('ubuntu:latest') {
-          sh "ssh -i "MyJenkinsKey.pem" ubuntu@ec2-3-68-183-70.eu-central-1.compute.amazonaws.com"
+#          sh "ssh -i "MyJenkinsKey.pem" ubuntu@ec2-3-68-183-70.eu-central-1.compute.amazonaws.com"
           sh "echo "stopttest1" > stoptestfile.txt"
         }
       }
