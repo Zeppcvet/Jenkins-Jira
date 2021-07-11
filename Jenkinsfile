@@ -9,12 +9,12 @@ pipeline {
 
 
       }
-      parameters {
+  parameters {
           choice(name: 'ACTION', choices: ['Start Jira', 'Stop Jira'],description: '')
 
       }
 
-      stages {
+  stages {
 
         stage ("Start Jira") {
               when {
