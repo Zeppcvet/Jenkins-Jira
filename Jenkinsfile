@@ -25,8 +25,11 @@ pipeline {
               url: 'https://github.com/Zeppcvet/Jenkins-Jira']]
             ])
       }
+      success {
+        echo ("//////////////////////////////Checkout Success//////////////////////////////////")
+      }
       failure {
-        echo ("Checkout Failure")
+        echo ("\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\Checkout Failure\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\")
 
       }  
       
