@@ -1,7 +1,7 @@
 pipeline {
   agent {
     kubernetes {
-      label 'jira-start-stop'
+      label 'jira-start-stop-python'
       idleMinutes 5
       yamlFile 'jira-start-stop.yaml'
       defaultContainer 'python'
