@@ -3,7 +3,7 @@ pipeline {
     kubernetes {
       label 'jira-start-stop'
       idleMinutes 5
-      yamlFile 'jenkins-jobs/pod-templates/jira-start-stop.yaml'
+      yamlFile 'jira-start-stop.yaml'
       defaultContainer 'ubuntu:latest'
     }
   }
