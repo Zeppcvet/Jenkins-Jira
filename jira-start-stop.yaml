@@ -2,8 +2,8 @@ apiVersion: v1
 kind: Pod
 spec:
   containers:
-    - name: python
-      image: python:3.9.0rc1-slim
+    - name: ubuntu-git
+      image: ceregousa/ubuntu-git
       command: ["tail", "-f", "/dev/null"]
        
   
