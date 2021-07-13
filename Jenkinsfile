@@ -20,7 +20,9 @@ pipeline {
       }
       steps {
         container('ubuntu:latest') {
-#          sh "ssh -i "MyJenkinsKey.pem" ubuntu@ec2-3-68-183-70.eu-central-1.compute.amazonaws.com"
+          sshagent (credentials : ['46c88c19-2b36-4f86-90b0-024e702cebe0'])
+          sh 'ssh -o StrictHostKeyChecking=no ubuntu@ec2-3-68-183-70.eu-central-1.compute.amazonaws.com'
+          sh 'ssh -v ubuntu@ec2-3-68-183-70.eu-central-1.compute.amazonaws.com'
           sh "echo "starttest1" > starttestfile.txt"
         }
       }
