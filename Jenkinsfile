@@ -17,6 +17,7 @@ pipeline {
         container('ceregousa/ubuntu-git') {
           checkout([
             $class: 'GitSCM',
+            doGenerateSubmoduleConfigurations: false,
             branches: [[name: '*/master']],
             extensions: [],
             userRemoteConfigs: [[
