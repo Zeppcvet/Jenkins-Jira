@@ -24,15 +24,17 @@ pipeline {
               credentialsId: 'e8e8080e-3157-4b8c-8345-e5442c710163',
               url: 'https://github.com/Zeppcvet/Jenkins-Jira.git']]
             ])
+        }
       }
-      success {
-        echo ('//////////////////////////////Checkout Success//////////////////////////////////')
-      }
-      failure {
-        echo ('//////////////////////////////Checkout Failure//////////////////////////////////')
+      post {
+        success {
+          echo '//////////////////////////////Checkout Success//////////////////////////////////'
+        }
+        failure {
+          echo '//////////////////////////////Checkout Failure//////////////////////////////////'
 
-      }  
-      
+        }  
+      }
       
       }
     }
