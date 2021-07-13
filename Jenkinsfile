@@ -26,7 +26,7 @@ pipeline {
         }
       }
     }
-  }
+  
     stage ("Start Jira") {
       when {
         expression {
