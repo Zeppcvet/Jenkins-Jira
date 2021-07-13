@@ -1,10 +1,10 @@
 pipeline {
   agent {
     kubernetes {
-      label 'jira-start-stop'
+      label 'ubuntu-git-jira-remote'
       idleMinutes 5
       yamlFile 'jira-start-stop.yaml'
-      defaultContainer 'ubuntu:latest'
+      defaultContainer 'ceregousa/ubuntu-git'
     }
   }
   parameters {
@@ -14,14 +14,15 @@ pipeline {
   stages {
     stage ("Checkout") {
       steps {
-        container('ubuntu:latest') {
+        container('ceregousa/ubuntu-git') {
           checkout([
             $class: 'GitSCM',
+            doGenerateSubmoduleConfigurations: false,
             branches: [[name: '*/master']],
             extensions: [],
             userRemoteConfigs: [[
               credentialsId: 'e8e8080e-3157-4b8c-8345-e5442c710163',
-              url: 'https://github.com/Zeppcvet/Jenkins-Jira.git']]
+              url: 'https://github.com/Zeppcvet/Jenkins-Jira']]
             ])
       }
       failure {
@@ -40,7 +41,7 @@ pipeline {
         }
       }
       steps {
-        container('ubuntu:latest') {
+        container('ceregousa/ubuntu-git') {
           sshagent (credentials : ['46c88c19-2b36-4f86-90b0-024e702cebe0'])
             sh 'ssh -o StrictHostKeyChecking=no ubuntu@ec2-3-68-183-70.eu-central-1.compute.amazonaws.com'
             sh 'ssh -v ubuntu@ec2-3-68-183-70.eu-central-1.compute.amazonaws.com'
@@ -57,7 +58,7 @@ pipeline {
         }
       }
       steps {
-        container('ubuntu:latest') {
+        container('ceregousa/ubuntu-git') {
           sshagent (credentials : ['46c88c19-2b36-4f86-90b0-024e702cebe0'])
             sh 'ssh -o StrictHostKeyChecking=no ubuntu@ec2-3-68-183-70.eu-central-1.compute.amazonaws.com'
             sh 'ssh -v ubuntu@ec2-3-68-183-70.eu-central-1.compute.amazonaws.com'
