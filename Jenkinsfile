@@ -12,6 +12,21 @@ pipeline {
 
       }
   stages {
+    stage ("Checkout") {
+      steps {
+        container('ubuntu:latest') {
+          checkout([
+            $class: 'GitSCM',
+            branches: [[name: '*/master']],
+            extensions: [],
+            userRemoteConfigs: [[
+              credentialsId: 'e8e8080e-3157-4b8c-8345-e5442c710163',
+              url: 'https://github.com/Zeppcvet/Jenkins-Jira.git']]
+            ])
+        }
+      }
+    }
+  }
     stage ("Start Jira") {
       when {
         expression {
