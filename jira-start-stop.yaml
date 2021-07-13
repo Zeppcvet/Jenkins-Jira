@@ -5,16 +5,5 @@ spec:
     - name: ubuntu
       image: ubuntu:latest
       command: ["tail", "-f", "/dev/null"]
-        volumeMounts:
-        - name: ssh
-          mountPath: /root/.ssh
-        resources:
-        requests:
-          memory: "500M"
-          cpu: "500m"
-        limits:
-          memory: "2Gi"
-          cpu: "1"
-  volumes:
-    - name: ssh
+       
   
